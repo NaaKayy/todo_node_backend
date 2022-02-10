@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 3000;
 
 //routes api
 app.use(express.json());
+app.get('/', function(request,response){
+    response.status(200).json({message: 'Welcome to Karren todo api'});
+});
 app.get('/todos', todoController.getallTodo);
 app.post('/todos', todoController.addTodo);
 app.patch('/todos/:todoId', todoController.updateTodoById);
